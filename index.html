@@ -90,6 +90,22 @@
 
   <!-- CSS (cache-busted) -->
   <link rel="stylesheet" href="/assets/css/site.css?v=2025-09-04" />
+<!-- Project-safe home background (relative path) -->
+<style>
+  body.home{
+    background-color:#000;
+    background-image:url("assets/img/placeholder_under745.jpg"); /* no leading slash */
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:contain;      /* shows her whole face */
+    background-attachment:scroll;
+    min-height:100vh;
+  }
+  /* Let the background show through */
+  body.home #content, body.home #contentpane{
+    background:transparent !important; border:0 !important; box-shadow:none !important;
+  }
+</style>
 
   <!-- Any inline styles for the home page go AFTER the link -->
   <style>
