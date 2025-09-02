@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Lynda Erkiletian â€” Video</title>
+<link href="/assets/css/site.css" rel="stylesheet"/>
+</head>
+<body class="">
+<div id="wrapper">
+<main id="content"><h1>Video</h1>
+<p>Videos</p>
+<p>Insert Pictures From the images folder Here - Distributed evenly inside the page</p><div class="gallery"><img alt="" src="/assets/img/video_Lynda Interviewing.jpg"/>
+<img alt="" src="/assets/img/video_Lynda dinning.jpg"/>
+<img alt="" src="/assets/img/video_Lynda in Today_s Show.jpg"/>
+<img alt="" src="/assets/img/video_Lynda wearing red jacket.jpg"/>
+<img alt="" src="/assets/img/video_Lynda with black jacketg.jpg"/>
+<img alt="" src="/assets/img/video_SPG Logo.jpg"/>
+<img alt="" src="/assets/img/video_Walking with Dog.jpg"/>
+</div></main>
+<aside id="sidebar">
+<div id="brand">Lynda Erkiletian</div>
+<ul id="menu"><li class="top"><a href="/index.html">Home</a></li><li class="top">About<div class="children"><a href="/about/biography/index.html">Biography</a><a href="/about/the-artist-agency/index.html">THE Artist Agency</a><a href="/about/philanthropy/index.html">Philanthropy</a></div></li><li class="top">Press<div class="children"><a href="/press/news-features/index.html">News Features</a><a href="/press/events/index.html">Events</a><a href="/press/real-housewives-of-dc/index.html">Real Housewives of DC</a><a href="/press/video/index.html">Video</a></div></li><li class="top"><a href="/blog/index.html">Blog</a></li><li class="top"><a href="/contact/index.html">Contact</a></li></ul>
+</aside>
+</div>
+<div id="socials"><a aria-label="Facebook" class="icon-link" href="https://www.facebook.com/pages/Lynda-Erkiletian-Fan-Page/172554016122896?v=wall" rel="noopener" style="color:#eaf2ff" target="_blank"><svg aria-hidden="true" height="28" viewbox="0 0 24 24" width="28"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5v-2.3c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.8l-.44 2.9h-2.4v7A10 10 0 0 0 22 12z" fill="currentColor"></path></svg></a><a aria-label="Twitter" class="icon-link" href="https://twitter.com/thereallyndadc" rel="noopener" style="color:#eaf2ff" target="_blank"><svg aria-hidden="true" height="28" viewbox="0 0 24 24" width="28"><path d="M22 5.8c-.7.3-1.4.5-2.1.6.8-.5 1.4-1.2 1.7-2-.7.4-1.6.8-2.4.9A3.5 3.5 0 0 0 11 7.8c0 .3 0 .6.1.8-3-.1-5.7-1.6-7.5-3.9-.3.6-.4 1.2-.4 1.9 0 1.3.7 2.5 1.8 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.9 1.4 3.4 3.2 3.8-.3.1-.7.1-1 .1-.3 0-.5 0-.7-.1.5 1.5 2 2.6 3.7 2.6A7 7 0 0 1 3 18.4a9.8 9.8 0 0 0 5.3 1.5c6.3 0 9.7-5.2 9.7-9.7v-.4c.7-.5 1.3-1.1 1.8-1.8z" fill="currentColor"></path></svg></a><a aria-label="Instagram" class="icon-link" href="https://instagram.com/thereallyndadc" rel="noopener" style="color:#eaf2ff" target="_blank"><svg aria-hidden="true" height="28" viewbox="0 0 24 24" width="28"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5Zm5.75-3.25a1.25 1.25 0 1 1-1.5 2 1.25 1.25 0 0 1 1.5-2Z" fill="currentColor"></path></svg></a></div>
+<script>
+(function(){
+  try{
+    var here = location.pathname.replace(/\/index\.html$/, '/');
+    var links = document.querySelectorAll('#menu a');
+    links.forEach(function(a){
+      var href = a.getAttribute('href');
+      if(!href) return;
+      var h = href.replace(/\/index\.html$/, '/');
+      if(h === here){
+        a.style.borderLeft = '3px solid var(--gold)';
+        a.style.background = 'rgba(198,166,103,.14)';
+      }
+    });
+  }catch(e){}
+})();
+</script>
+<script>
+(function(){
+  const btn = document.getElementById('mobile-menu-toggle');
+  const backdrop = document.getElementById('menu-backdrop');
+  if(!btn || !backdrop) return;
+
+  const setOpen = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    backdrop.hidden = !open;
+  };
+
+  btn.addEventListener('click', () => setOpen(!document.body.classList.contains('menu-open')));
+  backdrop.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') setOpen(false);
+  });
+})();
+</script>
+
+</body></html>
+
