@@ -4,24 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lynda Erkiletian — Home</title>
+
+  <!-- Repo-prefixed CSS with cache-buster -->
   <link rel="stylesheet" href="/lynda-site/assets/css/site.css?v=2025-09-08" />
-  <style id="home-photo-enforce">
+
+  <!-- This block MUST come AFTER the link so it wins -->
+  <style>
     body.home{
-      background-color:#000 !important;
-      background-image:url("/lynda-site/assets/img/placeholder_under745.jpg") !important;
-      background-repeat:no-repeat !important;
-      background-position:center center !important;
-      background-size:contain !important;
-      background-attachment:scroll !important;
-      min-height:100vh !important;
+      /* black canvas + centered uncropped photo */
+      background: #000 url("/lynda-site/assets/img/placeholder_under745.jpg")
+                  center top / contain no-repeat !important;
+      background-attachment: scroll !important;
+      min-height: 100vh;
     }
+    /* Let the photo show through */
     body.home #content, body.home #contentpane{
-      background:transparent !important; border:0 !important; box-shadow:none !important;
+      background: transparent !important; border:0 !important; box-shadow:none !important;
     }
   </style>
 </head>
-<body>
-
+<body class="home">
   <div id="wrapper">
     <main id="content">
       <!-- keep empty or add intro if you like -->
