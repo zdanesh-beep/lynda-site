@@ -1,140 +1,61 @@
-
-/* --- Elegant theme refresh (right-side vertical nav, gold accents) --- */
-*{box-sizing:border-box}
-html,body{height:100%}
+/* ==== Base / tokens ==== */
+* { box-sizing: border-box }
+html, body { height: 100% }
 :root{
   --bg:#0b0f14;
-  --sidebar:#0b0f14;
   --ink:#111418;
-  --muted:#58606b;
   --paper:rgba(255,255,255,.96);
   --gold:#c6a667;
-  --gold-2:#a28a52;
-}
-body{margin:0;font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;background:var(--bg);color:var(--ink)}
-#wrapper{
-  min-height:100%;
-  display:grid;
-  grid-template-columns:1fr minmax(320px,380px);
-  gap:28px;
-  align-items:start;
-}
-/* Content card */
-#content{
-  padding:40px 34px;
-  background:var(--paper);
-  border-radius:16px;
-  margin:36px;
-  box-shadow:0 18px 40px rgba(0,0,0,.28);
-  border:1px solid rgba(17,20,24,.06);
-}
-/* Sidebar */
-#sidebar{padding-bottom:80px; 
-  position:sticky; top:24px;
-  margin:36px 28px 36px 0;
-  padding:22px 20px 26px 20px;
-  background:linear-gradient(180deg, rgba(17,20,24,.85), rgba(7,9,12,.9));
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.09);
-  box-shadow:0 14px 34px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
-}
-#brand{
-  color:#e9edf3;
-  font-weight:900;
-  letter-spacing:.4px;
-  font-size:20px;
-  text-align:right;
-  margin:6px 2px 16px 0;
-  text-transform:uppercase;
-}
-#menu{list-style:none;margin:0;padding:0;text-align:right}
-#menu li{margin:6px 0}
-#menu a{
-  color:#e9edf3; text-decoration:none; font-weight:700;
-  display:inline-block; padding:6px 10px; border-radius:10px;
-  transition:.15s ease-in-out;
-}
-#menu a:hover{background:rgba(255,255,255,.08); color:#fff}
-#menu .top{font-weight:900}
-#menu .top > a{border-left:3px solid transparent}
-#menu .top > a:hover{border-left-color:var(--gold)}
-#menu .children{margin-top:6px}
-#menu .children a{display:block;color:#dce8ff;font-weight:700;margin:0 0 4px 0;padding:6px 10px;border-right:3px solid transparent;}
-#menu .children a::before{content:"› "; color:var(--gold); opacity:.9; margin-right:6px}
-/* Headings & text */
-h1{margin:0 0 16px 0; font-size:30px; letter-spacing:.2px; font-weight:900; color:#14181d}
-h2{margin:20px 0 8px; font-size:22px; color:#1a2027}
-p{line-height:1.7; margin:0 0 14px 0; color:#14181d}
-a{color:#0b57d0;text-decoration:none}
-a:hover{color:#0c66bf}
-/* Hero image beside text */
-/* Gallery */
-/* Container for hero (image + optional text) */
-.hero-wrap {
-  display: flex;
-  justify-content: center;   /* Center the image horizontally */
-  align-items: center;       /* Center vertically if taller container */
-  margin: 20px auto;
-  max-width: 90%;            /* Keep some margin on the sides */
-  gap: 20px;
-}
-
-/* The hero image itself */
-.hero-wrap img {
-  max-width: 320px;          /* Limit image width */
-  width: auto;               /* Keep aspect ratio */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.25);
-}
-
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-top:10px}
-.gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.18); border:1px solid rgba(0,0,0,.05)}
-/* Socials bottom-right */
-#socials{position:fixed;right:24px;bottom:22px;display:flex;gap:12px;z-index:50}
-#socials img{width:30px;height:30px;display:block;filter:drop-shadow(0 2px 8px rgba(0,0,0,.35))}
-
-/* Small screens */
-@media (max-width:1024px){
-  #wrapper{grid-template-columns:1fr}
-  #sidebar{padding-bottom:80px; text-align:center;margin:18px;border-radius:14px}
-  #brand{text-align:center}
-  #menu{text-align:center}
-  #content{margin:18px}
-}
-
-
-/* ---- THEME REFRESH ---- */
-:root{
-  --bg:#0b0f14;
-  --panel:#ffffff;
-  --ink:#0e1116;
   --accent:#ff3d6e;
   --accent-2:#7a9cff;
 }
 
-body{background:radial-gradient(1200px 800px at 20% 15%, #10151d 0%, #0b0f14 60%, #090d12 100%) fixed; color:var(--ink)}
-
-#content{
-  background:linear-gradient(180deg,#ffffff 0%, #f9fbff 100%);
+/* ==== Layout ==== */
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 15%, #10151d 0%, #0b0f14 60%, #090d12 100%) fixed;
   color:var(--ink);
+}
+#wrapper{
+  min-height:100%;
+  display:grid;
+  grid-template-columns: 1fr minmax(300px,360px);
+  gap:28px;
+  align-items:start;
+}
+#content{
+  padding:40px 34px;
+  background: linear-gradient(180deg,#ffffff 0%, #f9fbff 100%);
+  border-radius:16px;
+  margin:36px;
   border:1px solid rgba(14,17,22,.06);
   box-shadow:0 20px 50px rgba(0,0,0,.28);
 }
 
-/* Stylish right sidebar */
-#sidebar{padding-bottom:80px; 
-  position:sticky; top:20px; margin:32px 24px 32px 0;
+/* ==== Sidebar (right) ==== */
+#sidebar{
+  position: sticky; top:24px;
+  margin:36px 28px 36px 0;
+  padding:22px 20px 26px 20px;
+  background: linear-gradient(180deg, rgba(17,20,24,.9), rgba(7,9,12,.92));
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 14px 34px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+  color:#eaf2ff;
   backdrop-filter: blur(8px);
 }
 #brand{
-  color:#e9eef6; font-weight:900; text-align:right;
-  text-transform:uppercase; letter-spacing:.18em;
+  color:#e9eef6;
+  font-weight:900;
+  text-align:right;
+  text-transform:uppercase;
+  letter-spacing:.18em;
 }
 
-/* Menu pills */
-#menu{list-style:none;margin:0;padding:0;text-align:right}
-#menu li{margin:6px 0}
+/* ==== Menu ==== */
+#menu{ list-style:none; margin:0; padding:0; text-align:right }
+#menu li{ margin:6px 0 }
 #menu .top>a, #menu .top{
   display:inline-block;
   padding:10px 14px;
@@ -145,303 +66,49 @@ body{background:radial-gradient(1200px 800px at 20% 15%, #10151d 0%, #0b0f14 60%
   font-weight:800;
   text-shadow:0 1px 0 rgba(0,0,0,.35);
 }
-#menu .top>a:hover{outline:2px solid var(--accent); color:#fff}
-#menu .children{
-  margin-top:8px;
+#menu .top>a:hover{ outline:2px solid var(--accent); color:#fff }
+#menu .children{ margin-top:8px }
+#menu .children a{
+  display:block; color:#dce8ff; font-weight:700;
+  margin:0 0 4px 0; padding:6px 10px; border-right:3px solid transparent;
 }
-#menu .children a{display:block;color:#dce8ff;font-weight:700;margin:0 0 4px 0;padding:6px 10px;border-right:3px solid transparent;}
 #menu .children a:hover{
   color:#fff; border-right-color:var(--accent-2);
   background:linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,0));
 }
-#menu .children a::before{content:"• "; opacity:.8; color:var(--accent-2)}
+#menu .children a::before{ content:"• "; opacity:.8; color:var(--accent-2) }
 
-/* Headings & body text */
-h1{font-size:30px; font-weight:900; color:#0e1116}
-p{color:#0e1116}
+/* ==== Typography ==== */
+h1{ margin:0 0 16px 0; font-size:30px; font-weight:900; color:#0e1116 }
+h2{ margin:20px 0 8px; font-size:22px; color:#1a2027 }
+p{ line-height:1.7; margin:0 0 14px 0; color:#14181d }
+a{ color:#0b57d0; text-decoration:none }
+a:hover{ color:#0c66bf }
 
-/* Hero image floats for text wrap */
-img.float-right{float:right; margin:0 0 10px 16px; max-width:36%; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.2)}
-img.float-left{float:left; margin:0 16px 10px 0; max-width:36%; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.2)}
+/* ==== Helpers: image floats & gallery ==== */
+img.float-right{ float:right; margin:0 0 10px 16px; max-width:36%; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.2) }
+img.float-left{ float:left;  margin:0 16px 10px 0;  max-width:36%; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.2) }
+.gallery{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:14px; margin-top:10px }
+.gallery img{ width:100%; height:180px; object-fit:cover; border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,.18); border:1px solid rgba(0,0,0,.05) }
 
-/* Gallery tiles a bit smaller to fit one screen */
-.gallery{gap:10px}
-.gallery img{height:140px; border-radius:12px}
+/* ==== Socials bottom-right ==== */
+#socials{ position:fixed; right:24px; bottom:22px; display:flex; gap:12px; z-index:50 }
+#socials img{ width:30px; height:30px; display:block; filter:drop-shadow(0 2px 8px rgba(0,0,0,.35)) }
 
-/* Socials bottom-right */
-#socials{position:fixed; right:22px; bottom:20px; display:flex; gap:12px}
-#socials img{width:28px;height:28px}
-@media (max-width:960px){
-  img.float-right,img.float-left{float:none; max-width:100%; margin:0 0 12px 0}
+/* ==== Home page tweaks (content transparent over photo) ==== */
+body.home #content{ background:transparent; box-shadow:none; border:none; margin:0; padding:0 }
+
+/* ==== Responsive ==== */
+@media (max-width:1100px){
+  #wrapper{ grid-template-columns: 1fr }
+  #sidebar{ text-align:center; margin:18px; border-radius:14px; position:static; top:auto }
+  #brand, #menu{ text-align:center }
+  #content{ margin:18px }
+  img.float-right, img.float-left{ float:none; max-width:100%; margin:0 0 12px 0 }
 }
 
-body.home #content{background:transparent;box-shadow:none;border:none;margin:0;padding:0}
+/* ==== Final: keep menu text crisp on dark bg ==== */
+#sidebar, #sidebar a { color:#eef2f7 }
 
-  /* translucent card look to read on any bg */
-  background: linear-gradient(180deg, rgba(17,20,24,.85), rgba(7,9,12,.9));
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
-  padding: 18px 16px;
-}
-
-/* Menu look & spacing */
-#menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-#menu li { margin: 4px 0; }           /* condensed vertical spacing */
-#menu a {
-  display: block;
-  padding: 8px 10px;
-  text-decoration: none;
-  color: #eef2f7;
-  font-weight: 700;                    /* make it stand out */
-  letter-spacing: .2px;
-  border-radius: 8px;
-}
-#menu a:hover { background: rgba(255,255,255,.08); }
-
-/* Social icons row stays at bottom of the sidebar card */
-.socials {
-  position: sticky;
-  bottom: 0;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,.08);
-}
-
-/* Keep page content clear of the fixed sidebar on large screens */
-@media (min-width: 1100px) {
-  #content { margin-right: 340px; }    /* sidebar width + breathing room */
-}
-
-
-/* === Layout knobs === */
-:root{
-  --rbw: 340px;   /* right menu width; adjust 320–380 if needed */
-  --gap: 16px;    /* space between content and menu */
-}
-
-/* Right menu column (no internal scroll) */
-#rightbar{
-  float: right;
-  width: var(--rbw);
-  padding: 18px 16px;
-  margin-left: var(--gap);
-  border-left: 1px solid rgba(255,255,255,.08);
-  background: linear-gradient(180deg, rgba(17,20,24,.88), rgba(7,9,12,.92));
-  box-shadow: -18px 0 40px rgba(0,0,0,.35);
-  border-radius: 10px 0 0 10px;
-  overflow: visible !important;
-}
-
-/* WIDEN the content area so it fills nearly all space up to the right menu */
-#contentpane,
-#content{
-  margin-right: calc(var(--rbw) + var(--gap));
-  padding: 40px;
-  max-width: none;   /* remove any width cap */
-  width: auto;       /* let it expand fully */
-  box-sizing: border-box;
-}
-
-/* Tighter menu spacing & bolder labels */
-#rightbar #nav a,
-#rightbar #menu a{
-  display:block;
-  padding:8px 10px;
-  margin:4px 0;
-  text-decoration:none;
-  color:#eef2f7;
-  font-weight:800;
-  font-size:1.06rem;
-  border-radius:8px;
-}
-#rightbar #nav a:hover,
-#rightbar #menu a:hover{ background:rgba(255,255,255,.08) }
-
-/* Socials row at the bottom */
-#rightbar .socials{
-  margin-top:16px;
-  padding-top:12px;
-  border-top:1px solid rgba(255,255,255,.12);
-  display:flex; gap:14px; justify-content:center;
-}
-
-/* On home, let the content sit directly on the photo (no paper card) */
-body.home #contentpane,
-body.home #content{
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding-top: 40px;
-}
-
-/* If you had any inline hero image block, hide it so the bg is the only photo */
-body.home .hero-inline{ display:none !important; }
-
-/* Responsive fallback */
-@media (max-width: 1099px){
-  #rightbar{ float:none; width:auto; margin:0; border-radius:10px; }
-  #contentpane, #content{ margin-right:0; padding:24px; }
-}
-:root{
-  --rbw: 360px;   /* sidebar width (adjust 320–420) */
-  --gap: 20px;    /* gap between content and sidebar */
-}
-
-/* Right sidebar column */
-#rightbar{
-  position: sticky; top: 24px;        /* stays in view on long pages */
-  float: right;
-  width: var(--rbw);
-  margin-left: var(--gap);
-  padding: 18px 16px;
-  border-left: 1px solid rgba(255,255,255,.08);
-  background: linear-gradient(180deg, rgba(17,20,24,.9), rgba(7,9,12,.92));
-  box-shadow: -18px 0 40px rgba(0,0,0,.35);
-  border-radius: 12px 0 0 12px;
-  overflow: visible !important; /* no internal scrollbars */
-}
-
-/* Content expands up to the sidebar */
-#content, #contentpane{
-  margin-right: calc(var(--rbw) + var(--gap));
-  max-width: none; width: auto; box-sizing: border-box;
-  padding: 40px;
-}
-
-/* Compact, bold menu items */
-#rightbar #nav a, #rightbar #menu a{
-  display:block; padding:8px 10px; margin:4px 0;
-  text-decoration:none; color:#eef2f7;
-  font-weight:800; font-size:1.08rem; border-radius:8px;
-}
-#rightbar #nav a:hover, #rightbar #menu a:hover{ background:rgba(255,255,255,.08) }
-
-/* Social icons row pinned under the menu */
-#rightbar .socials{
-  margin-top:16px; padding-top:12px; border-top:1px solid rgba(255,255,255,.12);
-  display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap;
-}
-
-/* Mobile: stack layout */
-@media (max-width: 1100px){
-  #rightbar{ position: static; float:none; width:auto; margin:0; border-radius:12px; }
-  #content, #contentpane{ margin-right:0; padding:24px; }
-}
-
-/* Home page: keep content transparent over the photo */
-body.home #content, body.home #contentpane{
-  background: transparent !important; border:0 !important; box-shadow:none !important;
-}
-/* Page card (non-home) for readability */
-body:not(.home) #content, body:not(.home) #contentpane{
-  background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
-  color:#111; border:1px solid #e8ecf5; border-radius:14px;
-  box-shadow: 0 18px 40px rgba(16,24,40,.08);
-}
-
-/* Text wrap around local page images */
-.hero-wrap{display:flex;gap:18px;margin:6px 0 22px 0;align-items:flex-start;flex-wrap:wrap}
-.hero-wrap img{max-width:300px;height:auto;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.2)}
-.hero-wrap p{flex:1 1 320px}
-
-
-/* =============== FINAL OVERRIDES =============== */
-
-/* 1) Sidebar: make ~0.5 inch narrower (48px @ 96dpi) */
-#sidebar {
-  width: calc( (var(--sidebar-w, 320px)) - 48px ) !important;
-  max-width: none !important;   /* prevent earlier max-widths from fighting this */
-}
-
-/* If your layout doesn’t use --sidebar-w, hardcode instead (uncomment one):
-   #sidebar { width: 272px !important; }   /* 320 - 48 = 272 */
-/* #sidebar { width: 300px !important; }   /* use this if you want a bit wider */
-
-/* 2) Global page background: solid black */
-html, body {
-  background: #000 !important;
-}
-
-/* 3) Home page hero image: sits ON TOP of black background, not cropped */
-body.home {
-  /* Choose one of these images based on your project files */
-  background-image: url('/lynda-site/assets/img/home_bg.jpg');      /* preferred if present */
-
-/* === FINAL MOBILE FIX: right menu always visible === */
-@media (max-width: 900px){
-  #sidebar{
-    position: fixed !important;
-    top: 0 !important; right: 0 !important; bottom: 0 !important;
-    width: clamp(220px, 70vw, 300px) !important;
-    transform: none !important;
-    overflow: hidden !important;   /* no internal scrollbar */
-    z-index: 2000 !important;
-    margin: 0 !important;
-    border-radius: 12px 0 0 12px !important;
-  }
-  #content, #contentpane{
-    margin-right: clamp(220px, 70vw, 300px) !important;
-    padding: 18px 16px !important;
-  }
-}
-
-  /* background-image: url('/lynda-site/assets/img/placeholder_under745.jpg'); */ /* fallback */
-
-  background-repeat: no-repeat;
-  background-position: top center;   /* show full head */
-  background-size: contain;          /* keep entire image visible */
-  background-attachment: scroll;     /* safer on iPhone Safari/Chrome */
-}
-
-/* 4) Ensure inner pages stay readable over black bg */
-body:not(.home) #content,
-body:not(.home) #contentpane {
-  background: rgba(255,255,255,0.965) !important;
-  color: #141821 !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
-  border: 1px solid rgba(0,0,0,.05);
-}
-
-/* 5) Keep menu text crisp on dark sidebar */
-#sidebar, #sidebar a {
-  color: #eef2f7 !important;
-}
-
-/* 6) Avoid the sidebar overlapping content when we narrowed it */
-#content, #contentpane {
-  margin-right: 12px;     /* tiny nudge; increase if your layout needs more */
-}
-
-/* ============================================== */
-
-/* --- Socials must sit above the sidebar and be clickable --- */
-#sidebar { z-index: 500 !important; }      /* keep sidebar under socials */
-#socials  {
-  position: fixed !important;
-  right: 0.5in !important;                 /* same column as before */
-  bottom: 22px !important;
-  z-index: 1000 !important;                /* ensure on top in Chrome */
-  display: flex; gap: 14px; align-items: center;
-}
-#socials img { display:block; width:28px; height:28px; object-fit:contain; }
-
-/* If your sidebar still overlaps, give socials a tiny lift */
-@media (min-width: 600px) {
-  #socials { bottom: 28px !important; }    /* nudge up a bit */
-}
-
-  /* Home background (Lynda photo) remains visible; avoid any fixed bg jitter on iOS */
-  body.home{
-    background-attachment: scroll !important;
-    background-position: center top !important;  /* adjust if needed: center 15% */
-    background-size: cover !important;
-  }
-}
+/* ==== (We deliberately do NOT set body.home background here)
+   Home photo is enforced inline in home index.html to avoid conflicts. ==== */
