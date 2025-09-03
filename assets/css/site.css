@@ -373,7 +373,7 @@ html, body {
 /* 3) Home page hero image: sits ON TOP of black background, not cropped */
 body.home {
   /* Choose one of these images based on your project files */
-  background-image: url('assets/img/home_bg.jpg');      /* preferred if present */
+  background-image: url('/lynda-site/assets/img/home_bg.jpg');      /* preferred if present */
 
 /* === FINAL MOBILE FIX: right menu always visible === */
 @media (max-width: 900px){
@@ -393,7 +393,7 @@ body.home {
   }
 }
 
-  /* background-image: url('assets/img/placeholder_under745.jpg'); */ /* fallback */
+  /* background-image: url('/lynda-site/assets/img/placeholder_under745.jpg'); */ /* fallback */
 
   background-repeat: no-repeat;
   background-position: top center;   /* show full head */
