@@ -6,7 +6,24 @@
   <title>Lynda Erkiletian — Home</title>
 
   <!-- One CSS link, repo-prefixed + cache-buster -->
-  <link rel="stylesheet" href="/lynda-site/assets/css/site.css?v=2025-09-07" />
+  <link rel="stylesheet" href="/lynda-site/assets/css/site.css?v=2025-09-08" />
+  <style id="home-photo-enforce">
+  body.home{
+    background-color:#000 !important;
+    background-image:url("/lynda-site/assets/img/placeholder_under745.jpg") !important;
+    background-repeat:no-repeat !important;
+    background-position:center center !important;
+    background-size:contain !important;   /* show the whole face */
+    background-attachment:scroll !important;
+    min-height:100vh !important;
+  }
+
+  /* keep the content transparent on the home photo */
+  body.home #content, body.home #contentpane{
+    background:transparent !important; border:0 !important; box-shadow:none !important;
+  }
+</style>
+
 
   <!-- Home: centered, uncropped photo on black -->
   <style>
