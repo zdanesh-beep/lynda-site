@@ -112,3 +112,32 @@ body.home #content{ background:transparent; box-shadow:none; border:none; margin
 
 /* ==== (We deliberately do NOT set body.home background here)
    Home photo is enforced inline in home index.html to avoid conflicts. ==== */
+/* Blog grid */
+.blog-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 20px;
+}
+.post{
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(14,17,22,.06);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+.post-title{
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0e1116;
+}
+.post-date{
+  display: block;
+  font-size: 14px;
+  color: #58606b;
+  margin-bottom: 10px;
+}
+/* Stack to one column on phones */
+@media (max-width: 800px){
+  .blog-grid{ grid-template-columns: 1fr; }
+}
