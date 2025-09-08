@@ -7,6 +7,7 @@
   <title>Lynda Erkiletian - News Features</title>
   <link rel="stylesheet" href="/lynda-site/assets/css/site.css?v=2025-09-08" />
 </head>
+
 <body>
 <div id="wrapper">
 <main id="content"><h1>News Features</h1>
@@ -16,7 +17,22 @@
 <img alt="" src="/lynda-site/assets/img/news_Lynda - The Player.jpg"/>
 <img alt="" src="/lynda-site/assets/img/news_Lynda Lager.jpg"/>
 <img alt="" src="/lynda-site/assets/img/news_Lynda in Washingtonian Style Setters Cover Page.jpg"/>
-<img alt="" src="/lynda-site/assets/img/news_Lynda with Andy Cohen.jpg"/>
+
+  <a href="#" class="popup-trigger" data-target="andy-popup">
+  <img alt="Lynda with Andy Cohen" src="/lynda-site/assets/img/news_Lynda with Andy Cohen.jpg" />
+</a>
+
+<!-- Hidden popup content -->
+<div id="andy-popup" class="popup" style="display:none;">
+  <div class="popup-content">
+    <span class="popup-close">&times;</span>
+    <h2>Washington Post</h2>
+    <h4>May 22, 2012</h4>
+    <p>“Everybody Loves Andy”</p>
+    <p>“Real Housewives” reunited with Andy Cohen.</p>
+  </div>
+</div>
+
 <img alt="" src="/lynda-site/assets/img/news_Lynda with Fur Coat.jpg"/>
 <img alt="" src="/lynda-site/assets/img/news_Success where so many other failed.jpg"/>
 <img alt="" src="/lynda-site/assets/img/news_The barely legal.jpg"/>
@@ -86,6 +102,30 @@
     if(e.key === 'Escape') setOpen(false);
   });
 })();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const triggers = document.querySelectorAll(".popup-trigger");
+  const popups = document.querySelectorAll(".popup");
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener("click", function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("data-target");
+      document.getElementById(targetId).style.display = "block";
+    });
+  });
+
+  popups.forEach(popup => {
+    const closeBtn = popup.querySelector(".popup-close");
+    closeBtn.addEventListener("click", function() {
+      popup.style.display = "none";
+    });
+    popup.addEventListener("click", function(e) {
+      if (e.target === popup) popup.style.display = "none";
+    });
+  });
+});
 </script>
 
 </body></html>
