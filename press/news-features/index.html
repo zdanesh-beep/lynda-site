@@ -22,14 +22,18 @@
   <img alt="Lynda with Andy Cohen" src="/lynda-site/assets/img/news_Lynda with Andy Cohen.jpg" />
 </a>
 
-<!-- Hidden popup content -->
 <div id="andy-popup" class="popup" style="display:none;">
   <div class="popup-content">
     <span class="popup-close">&times;</span>
-    <h2>Washington Post</h2>
-    <h4>May 22, 2012</h4>
-    <p>“Everybody Loves Andy”</p>
-    <p>“Real Housewives” reunited with Andy Cohen.</p>
+    <div class="popup-body">
+      <img src="/lynda-site/assets/img/news_Lynda with Andy Cohen.jpg" alt="Lynda with Andy Cohen" />
+      <div class="popup-text">
+        <h2>Washington Post</h2>
+        <h4>May 22, 2012</h4>
+        <p>“Everybody Loves Andy”</p>
+        <p>“Real Housewives” reunited with Andy Cohen.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -84,26 +88,7 @@
   }catch(e){}
 })();
 </script>
-<script>
-(function(){
-  const btn = document.getElementById('mobile-menu-toggle');
-  const backdrop = document.getElementById('menu-backdrop');
-  if(!btn || !backdrop) return;
-
-  const setOpen = (open) => {
-    document.body.classList.toggle('menu-open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    backdrop.hidden = !open;
-  };
-
-  btn.addEventListener('click', () => setOpen(!document.body.classList.contains('menu-open')));
-  backdrop.addEventListener('click', () => setOpen(false));
-  document.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape') setOpen(false);
-  });
-})();
-</script>
-<script>
+ <script>
 document.addEventListener("DOMContentLoaded", function() {
   const triggers = document.querySelectorAll(".popup-trigger");
   const popups = document.querySelectorAll(".popup");
@@ -112,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
     trigger.addEventListener("click", function(e) {
       e.preventDefault();
       const targetId = this.getAttribute("data-target");
-      document.getElementById(targetId).style.display = "block";
+      document.getElementById(targetId).style.display = "flex";
     });
   });
 
@@ -127,6 +112,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
-
+ 
 </body></html>
 
